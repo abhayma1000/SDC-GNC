@@ -1,6 +1,13 @@
-# SDC-GNC
+# SDC-ADCS
 
-GNC for GOAT-1
+ADCS for GOAT-1
+
+Hopefully simulating the following...
+
+Sensors:
+* IMU
+* Sun sensor
+* Star tracker
 
 # Prerequisites
 
@@ -9,4 +16,6 @@ GNC for GOAT-1
 * Matlab
   * Simulink
   * Aerospace toolbox
+ 
+  
 
