@@ -36,7 +36,7 @@ rotationRate = [0.01, 0.02, 0.03]; % radians per second (example rates for roll,
 
 %% Initialize position, velocity
 
-initialLLA = [42.2746, -71.8068, 1000000];
+initialLLA = [42.2746, -71.8068, 1000000]; % Note not currently used
 
 % TODO
 
