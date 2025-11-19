@@ -3,6 +3,7 @@
 %% Initialize time
 
 startTime = datetime(2027, 10, 10, 10, 10, 10);
+stopTime = datetime(2027, 10, 10, 11, 10, 10); % 1 hour ahead
 julianDate = juliandate(startTime);
 
 %% Orbit parameters
