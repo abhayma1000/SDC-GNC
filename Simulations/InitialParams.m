@@ -3,12 +3,28 @@
 %% Initialize time
 
 startTime = datetime(2027, 10, 10, 10, 10, 10);
+stopTime = datetime(2027, 10, 10, 11, 10, 10); % 1 hour ahead
+julianDate = juliandate(startTime);
+
+%% Orbit parameters
+
+semiMajorAxis = 6865000; % meters
+eccentricity = 0.0002105; % unitless
+inclination = 97.4; % degrees
+rightAscensionOfAscendingNode = 0; % degrees
+argumentOfPeriapsis = 0; % degrees
+trueAnomaly = 0; % degrees
+
+%% Initialize sat dynamics properties
+
+mass = 0.25; % [kg]
+inertia_tensor = [0.2273, 0, 0; 0, 0.2273, 0; 0, 0, .0040]; % TODO example for now
 
 
 %% Initialize DCM R_BI
 
 random_quat = rand(1, 4);
-initial_q_BI = quaternion(norm(random_quat));
+initial_q_BI = random_quat / norm(random_quat);
 initial_R_BI = quat2dcm(initial_q_BI);
 
 %% Initialize tumble rate
@@ -21,6 +37,7 @@ rotationRate = [0.01, 0.02, 0.03]; % radians per second (example rates for roll,
 
 %% Initialize position, velocity
 
-initialLLA = [42.2746, -71.8068, 1000000];
+initialLLA = [42.2746, -71.8068, 1000000]; % Note not currently used
 
 % TODO
+
