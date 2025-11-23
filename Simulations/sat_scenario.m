@@ -30,7 +30,12 @@ mission.Satellite.TrueAnomaly    = 0; % degrees
 random_quat = rand(1, 4);
 initial_q_BI = random_quat / norm(random_quat);
 mission.Satellite.q0 = initial_q_BI;
-mission.Satellite.pqr = [10, 5, 2.5]; % deg/s TODO CHANGE TO TUMBLE RATE
+mission.Satellite.pqr = [10, 5, 2.5]; % deg/s Change to desired tumble rate
+
+%% Initialize sat dynamics properties
+
+mass = 0.25; % [kg]
+inertia_tensor = [0.2273, 0, 0; 0, 0.2273, 0; 0, 0, .0040]; % Change to actual inertia tensor
 
 
 set_param(mission.Satellite.blk, ...
